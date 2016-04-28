@@ -524,8 +524,10 @@ THREE.ObjectLoader.prototype = {
 
 					} else {
 
-						object = new THREE.Mesh( geometry, material );
-
+						object = new Physijs.BoxMesh( geometry, material );
+						object.addEventListener( 'collision', function( other_object, relative_velocity, relative_rotation, contact_normal ) {
+								console.log("fasdjioghaösodf");
+						});
 					}
 
 					break;

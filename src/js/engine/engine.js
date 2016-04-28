@@ -20,7 +20,8 @@ function Engine()
     this.Initialize = function()
     {
         // set up scene and camera
-        this.scene = new THREE.Scene();
+        this.scene = new Physijs.Scene();
+        this.scene.setGravity(new THREE.Vector3( 0, Config.Gravity, 0 ));
         if(Config.Isometric)
         {
             var d = 20;
@@ -85,6 +86,9 @@ function Engine()
 
         if(self.stats)
             self.stats.begin();
+
+        // physijs
+        this.scene.simulate();
 
 		    //this.Objects.PreMove();
         //this.Objects.TargetMove();

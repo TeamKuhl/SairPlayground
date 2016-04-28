@@ -269,6 +269,10 @@ function Objects()
 			this.objects[name].model.position.y = (position.y * Config.Size) * (1+Config.Spacing) / 2;
 		if(position.z != undefined && position.z != false)
 			this.objects[name].model.position.z = (position.z * Config.Size) * (1+Config.Spacing);
+
+		// physijs
+    this.objects[name].model.__dirtyPosition = true;
+
 	}
 
 	/**
@@ -281,6 +285,9 @@ function Objects()
 			this.objects[name].model.position.y += (position.y * Config.Size) * (1+Config.Spacing) / 2;
 		if(position.z != undefined && position.z != false)
 			this.objects[name].model.position.z += (position.z * Config.Size) * (1+Config.Spacing);
+
+		// physijs
+    this.objects[name].model.__dirtyPosition = true;
 	}
 
 	/**
@@ -293,6 +300,9 @@ function Objects()
 			this.objects[name].model.rotation.y = rotation.y * Math.PI * 2;
 		if(rotation.z != undefined && rotation.z != false)
 			this.objects[name].model.rotation.z = rotation.z * Math.PI * 2;
+
+		// physijs
+    this.objects[name].model.__dirtyRotation = true;
 	}
 
 	/**
@@ -305,6 +315,9 @@ function Objects()
 			this.objects[name].model.rotation.y += rotation.y * Math.PI * 2;
 		if(rotation.z != undefined && rotation.z != false)
 			this.objects[name].model.rotation.z += rotation.z * Math.PI * 2;
+
+		// physijs
+    this.objects[name].model.__dirtyRotation = true;
 	}
 
 	/**
@@ -317,6 +330,9 @@ function Objects()
 			this.objects[name].model.translateY(movement.y * Config.Size);
 		if(movement.z != undefined && movement.z != false)
 			this.objects[name].model.translateZ(movement.z * Config.Size);
+
+		// physijs
+    this.objects[name].model.__dirtyPosition = true;
 	}
 
 }

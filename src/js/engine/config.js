@@ -17,5 +17,6 @@ var Config = {
 	AntiAlias:      true,
 	Isometric:      false,
 	Stats:					true,
-	Shadows:				false
+	Shadows:				false,
+	Gravity: 				-30
 }

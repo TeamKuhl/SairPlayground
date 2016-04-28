@@ -1,14 +1,18 @@
 // Inininininit
 
+// configure physijs
+Physijs.scripts.worker = 'src/vendor/threejs/plugins/physijs_worker.js';
+Physijs.scripts.ammo = 'ammo.js';
+
+// create objects
 var Engine = new Engine();
-var Client = new Client();
 var Game = new Game();
 
 Engine.Initialize();
 Engine.Models.Load([
 	{name:"plane",path:"vehicles/planes/cessna-152",loader:"collada"},
 	{name:"fire",path:"vehicles/ground/feuerwehr",loader:"collada"},
-	{name:"tanka",path:"vehicles/ground/tank-lkw",loader:"collada"},
+	{name:"tanka",path:"vehicles/ground/tank-lkw",loader:"json"},
 	{name:"map",path:"maps/hockenheimring",loader:"collada"},
 	{name:"trees",path:"landscape/trees",loader:"collada"},
 	{name:"grass",path:"landscape/grass",loader:"collada"},
@@ -22,15 +26,9 @@ Engine.Models.Load([
 	{name:"runway-boundary-edge",path:"landscape/runway-boundary-edge",loader:"collada"},
 	{name:"runway-grass-street",path:"landscape/runway-grass-street",loader:"collada"},
 ],function(){
+	
 	$('#loader').fadeOut();
-
-
-	Client.Initialize();
 	Game.Initialize();
-
-	//Engine.Objects.Add("tanka",{x:1.5,y:1,z:0},"tanka",1, {y:0.75});
-	//Engine.Objects.Add("fire",{x:0,y:1,z:0},"fire",0.5, {y:0.75});
-	//Engine.Objects.Add("plane",{x:-5,y:1,z:0},"plane",1);
 
 },
 function(mdl, info){
