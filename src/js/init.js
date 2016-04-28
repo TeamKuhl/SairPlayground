@@ -12,7 +12,7 @@ Engine.Initialize();
 Engine.Models.Load([
 	{name:"plane",path:"vehicles/planes/cessna-152",loader:"collada"},
 	{name:"fire",path:"vehicles/ground/feuerwehr",loader:"collada"},
-	{name:"tanka",path:"vehicles/ground/tank-lkw",loader:"json"},
+	{name:"tanka",path:"vehicles/ground/tank-lkw",loader:"collada"},
 	{name:"map",path:"maps/hockenheimring",loader:"collada"},
 	{name:"trees",path:"landscape/trees",loader:"collada"},
 	{name:"grass",path:"landscape/grass",loader:"collada"},
@@ -26,7 +26,7 @@ Engine.Models.Load([
 	{name:"runway-boundary-edge",path:"landscape/runway-boundary-edge",loader:"collada"},
 	{name:"runway-grass-street",path:"landscape/runway-grass-street",loader:"collada"},
 ],function(){
-	
+
 	$('#loader').fadeOut();
 	Game.Initialize();
 
