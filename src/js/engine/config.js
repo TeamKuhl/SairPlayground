@@ -18,5 +18,6 @@ var Config = {
 	Isometric:      false,
 	Stats:					true,
 	Shadows:				false,
-	Gravity: 				-30
+	Gravity: 				-30,
+	Simulation:			true
 }

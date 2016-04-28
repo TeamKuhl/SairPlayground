@@ -88,7 +88,8 @@ function Engine()
             self.stats.begin();
 
         // physijs
-        this.scene.simulate();
+        if(Config.Simulation)
+          this.scene.simulate();
 
 		    //this.Objects.PreMove();
         //this.Objects.TargetMove();

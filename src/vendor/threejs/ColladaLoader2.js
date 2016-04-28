@@ -1138,7 +1138,9 @@ THREE.ColladaLoader.prototype = {
 
 					case 'triangles':
 					case 'polylist':
-						object = new THREE.Mesh( geometry, DEFAULT_MESHMATERIAL );
+						geometry.computeFaceNormals();
+						geometry.computeVertexNormals();
+						object = new Physijs.BoxMesh( geometry, DEFAULT_MESHMATERIAL, 0 );
 						break;
 
 				}
